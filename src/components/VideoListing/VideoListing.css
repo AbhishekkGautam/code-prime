@@ -1,0 +1,134 @@
+.videos-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+.video {
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.video-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.info-container {
+  display: flex;
+}
+
+.avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 12px;
+  width: 36px;
+  height: 36px;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-info .video-title {
+  color: var(--white);
+  line-height: 20px;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.video-info span {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+}
+
+.more-options .material-icons,
+.more-options .material-icons-outlined {
+  color: var(--gray-300);
+  cursor: pointer;
+}
+
+.more-options {
+  position: relative;
+}
+
+.option-modal {
+  position: absolute;
+  left: -245px;
+  margin-top: -10px;
+  width: 250px;
+  min-width: 250px;
+  padding: 0.5em 0;
+  background-color: var(--secondary-color);
+  color: var(--gray-50);
+  display: none;
+  flex-direction: column;
+  border-radius: 3px;
+}
+
+.option-modal.show {
+  display: flex;
+}
+
+.option-modal-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+}
+
+.option-modal-btn span {
+  color: var(--gray-50);
+}
+
+.option-modal-btn:hover {
+  background-color: var(--bg-hover-blue);
+  cursor: pointer;
+}
+
+.option-modal-btn .material-icons,
+.option-modal-btn .material-icons-outlined {
+  color: var(--gray-50);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 450px) {
+  .videos-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .videos-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .videos-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}

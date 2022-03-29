@@ -1,0 +1,7 @@
+.main-container {
+  height: calc(100vh - 70px);
+  position: relative;
+  top: 70px;
+  display: flex;
+  background-color: var(--primary-color);
+}
