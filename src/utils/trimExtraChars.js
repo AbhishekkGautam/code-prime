@@ -1,3 +1,3 @@
-export const trimExtraChars = text => {
-  return text.length < 50 ? text : text.substr(0, 48) + "...";
+export const trimExtraChars = (text, chars) => {
+  return text.length < chars ? text : text.substr(0, chars - 3) + "...";
 };

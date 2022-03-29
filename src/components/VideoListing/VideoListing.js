@@ -7,7 +7,7 @@ import {
   thumbnailGenerator,
   trimExtraChars,
 } from "../../utils";
-import { MoreOptionsModal } from "./MoreOptionsModal";
+import { MoreOptionsModal } from "../MoreOptionsModal/MoreOptionsModal";
 
 export const VideoListing = () => {
   const {
@@ -44,7 +44,7 @@ export const VideoListing = () => {
                 <div className="info-container">
                   <img className="avatar" src={avatar} alt={channelName} />
                   <div className="video-info">
-                    <h3 className="video-title">{trimExtraChars(title)}</h3>
+                    <h3 className="video-title">{trimExtraChars(title, 50)}</h3>
                     <span>{channelName}</span>
                     <span>
                       {viewsFormatter(views)} views •{" "}

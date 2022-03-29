@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./VideoListing.css";
+import "./MoreOptionsModal.css";
 import { RiShareForwardLine } from "react-icons/ri";
 
 export const MoreOptionsModal = () => {
@@ -15,7 +15,6 @@ export const MoreOptionsModal = () => {
     document.addEventListener("mousedown", checkIfClickedOutside);
 
     return () => {
-      // Cleanup the event listener
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
   }, [showOptionsModal]);

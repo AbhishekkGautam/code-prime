@@ -1,0 +1,109 @@
+.trending-video {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.trending-video .thumbnail {
+  width: 200px;
+  height: auto;
+  margin-right: 16px;
+}
+
+.trending-video .video-details {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0;
+}
+
+.trending-video .info-container {
+  display: flex;
+}
+
+.trending-video .video-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.trending-video .video-title {
+  color: var(--white);
+  line-height: 18px;
+  font-size: 12px;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.trending-video .video-info span {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+}
+
+.video-description.hide-on-mobile {
+  display: none;
+}
+.video-description.hide-on-desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 480px) {
+  .trending-video .thumbnail {
+    width: 300px;
+    height: auto;
+    margin-right: 16px;
+  }
+  .trending-video .video-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .trending-video .video-info span {
+    font-size: 11px;
+  }
+  .video-description.hide-on-desktop {
+    display: block;
+  }
+  .trending-video .video-info .video-description {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    padding-top: 8px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .trending-video .video-title {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  .trending-video .video-info span {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .trending-video {
+    width: 90%;
+  }
+  .video-description.hide-on-desktop {
+    display: none;
+  }
+  .video-description.hide-on-mobile {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .trending-video {
+    width: 70%;
+  }
+  .trending-video .video-info .video-description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
