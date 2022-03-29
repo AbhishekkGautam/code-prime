@@ -1,8 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Mockman from "mockman-js";
-import { Home } from "./pages";
-import { Trending } from "./pages";
+import { Home, Trending } from "./pages";
 
 function App() {
   return (

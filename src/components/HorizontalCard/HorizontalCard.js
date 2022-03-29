@@ -32,12 +32,7 @@ export const HorizontalCard = ({ trendingVideo }) => {
             <span>
               {channelName} • {viewsFormatter(views)} views
             </span>
-            <p class="video-description hide-on-desktop">
-              {trimExtraChars(description, 80)}
-            </p>
-            <p class="video-description hide-on-mobile">
-              {trimExtraChars(description, 150)}
-            </p>
+            <p class="video-description hide-on-mobile">{description}</p>
           </div>
         </div>
         <MoreOptionsModal />
