@@ -12,7 +12,7 @@
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
-  /* z-index: 99; */
+  z-index: 99;
 }
 
 .category-tags-container::-webkit-scrollbar {
