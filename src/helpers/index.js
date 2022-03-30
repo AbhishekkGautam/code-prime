@@ -1,1 +1,5 @@
-export { getTrendingVideos } from "./helpers";
+export {
+  getTrendingVideos,
+  getUniqueValues,
+  getFilteredVideos,
+} from "./helpers";

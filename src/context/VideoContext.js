@@ -4,6 +4,9 @@ import { videoReducer } from "../reducers";
 
 const initialState = {
   videos: [],
+  filters: {
+    category: "All",
+  },
   loading: false,
   error: null,
 };
@@ -14,6 +17,7 @@ const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(videoReducer, initialState);
 
   useEffect(() => {
+    dispatch({ type: "LOADING" });
     (async () => {
       try {
         const { data, status } = await axios.get("api/videos");
