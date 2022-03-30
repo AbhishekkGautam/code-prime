@@ -19,8 +19,8 @@ export const TrendingList = () => {
         <p>{error}</p>
       ) : (
         trendingVideos &&
-        trendingVideos.map(video => {
-          return <HorizontalCard trendingVideo={video} />;
+        trendingVideos.map((video, id) => {
+          return <HorizontalCard trendingVideo={video} key={id} />;
         })
       )}
     </div>
