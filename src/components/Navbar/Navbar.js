@@ -22,7 +22,7 @@ export const Navbar = () => {
       </div>
       <div className="navbar-section">
         {pathname === "/login" || pathname === "/signup" ? null : (
-          <form action="#" className="nav-form">
+          <form className="nav-form">
             <input
               type="search"
               placeholder="search"
