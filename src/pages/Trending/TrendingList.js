@@ -1,13 +1,13 @@
 import React from "react";
 import "./Trending.css";
-import { useVideo } from "../../context/VideoContext";
+import { useVideoContext } from "../../context/VideoContext";
 import { HorizontalCard } from "../../components";
 import { getTrendingVideos } from "../../helpers";
 
 export const TrendingList = () => {
   const {
     state: { videos, loading, error },
-  } = useVideo();
+  } = useVideoContext();
 
   const trendingVideos = getTrendingVideos(videos);
 
@@ -19,8 +19,8 @@ export const TrendingList = () => {
         <p>{error}</p>
       ) : (
         trendingVideos &&
-        trendingVideos.map(video => {
-          return <HorizontalCard trendingVideo={video} />;
+        trendingVideos.map((video, id) => {
+          return <HorizontalCard trendingVideo={video} key={id} />;
         })
       )}
     </div>
