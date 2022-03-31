@@ -1,0 +1,126 @@
+@import "../../index.css";
+
+.login-wrapper {
+  background-color: var(--primary-color);
+  padding-top: 70px;
+}
+
+.login-section {
+  margin-top: 0;
+}
+.login-container {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+}
+
+.card.login-card-container {
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  overflow: hidden;
+}
+
+.card.login-card-container .card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.login-error-message {
+  font-size: 12px;
+  background-color: var(--light-red);
+  padding: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.card.login-card-container .card-body {
+  width: 100%;
+}
+
+.card.login-card-container .card-body .input-group {
+  width: auto;
+  margin: 0 0 10px;
+}
+
+.card.login-card-container .card-extra-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+}
+
+.card.login-card-container .card-extra-content .checkbox-label {
+  margin: 0;
+}
+
+.card.login-card-container .card-extra-content .checkbox {
+  margin-left: 0;
+}
+
+.card.login-card-container .card-extra-content .forgot-password {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.card.login-card-container .card-extra-content .forgot-password:hover {
+  opacity: 0.8;
+}
+
+.card.login-card-container .login-btn {
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+.login-with-test-btn {
+  width: 100%;
+  background-color: var(--gray-100);
+}
+
+.card.login-card-container .create-new-account-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.card.login-card-container .create-new-account-link a {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--gray-600);
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.card.login-card-container .create-new-account-link a:hover {
+  color: var(--secondary-color);
+}
+
+@media only screen and (min-width: 450px) {
+  .login-container {
+    padding: 2rem;
+  }
+  .card.login-card-container {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .login-container {
+    padding: 2rem 4rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .login-container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
