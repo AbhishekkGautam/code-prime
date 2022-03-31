@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
         payload: getUserFromLocalStorage,
       });
     }
-  }, []);
+  }, [getTokenFromLocalStorage, getUserFromLocalStorage]);
 
   const signupHandler = async (firstName, lastName, email, password) => {
     const toastId = toast.loading("Creating your account...");
