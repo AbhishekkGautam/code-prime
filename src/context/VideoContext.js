@@ -37,6 +37,6 @@ const VideoProvider = ({ children }) => {
   );
 };
 
-const useVideo = () => useContext(VideoContext);
+const useVideoContext = () => useContext(VideoContext);
 
-export { VideoProvider, useVideo };
+export { VideoProvider, useVideoContext };

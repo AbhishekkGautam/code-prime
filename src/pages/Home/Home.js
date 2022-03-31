@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { NavSidebarContainer, VideoListing } from "../../components";
-import { useVideo } from "../../context/VideoContext";
+import { useVideoContext } from "../../context/VideoContext";
 import { getUniqueValues, getFilteredVideos } from "../../helpers";
 import "./Home.css";
 export const Home = () => {
   const [uniqueCategories, setUniqueCategories] = useState();
-  const { state, dispatch } = useVideo();
+  const { state, dispatch } = useVideoContext();
   const { videos, loading, error, filters } = state;
 
   useEffect(() => {
