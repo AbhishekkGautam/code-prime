@@ -22,7 +22,7 @@ export const MoreOptionsModal = () => {
   return (
     <div className="more-options" ref={ref}>
       <i
-        class="material-icons material-icons-outlined"
+        className="material-icons material-icons-outlined"
         onClick={() => setShowOptionsModal(!showOptionsModal)}
       >
         more_vert
@@ -32,14 +32,14 @@ export const MoreOptionsModal = () => {
           className={showOptionsModal ? "option-modal show" : "option-modal"}
         >
           <button class="option-modal-btn">
-            <i class="material-icons-outlined">watch_later</i>
+            <i className="material-icons-outlined">watch_later</i>
             <span>Save to Watch later</span>
           </button>
           <button class="option-modal-btn">
-            <i class="material-icons-outlined">playlist_add</i>
+            <i className="material-icons-outlined">playlist_add</i>
             <span>Save to playlist</span>
           </button>
-          <button class="option-modal-btn">
+          <button className="option-modal-btn">
             <RiShareForwardLine className="material-icons-outlined" />
             <span>Share</span>
           </button>
