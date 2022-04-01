@@ -15,3 +15,6 @@ export const getFilteredVideos = (videos, state) => {
     return [...videos];
   }
 };
+
+export const getVideoDetailsById = (videos, videoId) =>
+  videos?.find(video => video._id === videoId);
