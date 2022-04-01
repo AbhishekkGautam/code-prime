@@ -40,7 +40,7 @@ export const Home = () => {
         {loading ? (
           <div className="loader-container">Loading...</div>
         ) : error ? (
-          <p>{error}</p>
+          <p>{error.status}</p>
         ) : (
           <VideoListing videos={filteredVideos} />
         )}
