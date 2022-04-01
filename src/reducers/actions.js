@@ -7,3 +7,6 @@ export const USER_IS_LOGGED_IN = "USER_IS_LOGGED_IN";
 export const SAVE_USER_INFO = "SAVE_USER_INFO";
 export const AUTH_ERROR = "AUTH_ERROR";
 export const LOG_OUT = "LOG_OUT";
+export const GET_LIKED_VIDEOS = "GET_LIKED_VIDEOS";
+export const LIKE_VIDEO = "LIKE_VIDEO";
+export const DISLIKE_VIDEO = "DISLIKE_VIDEO";
