@@ -8,6 +8,9 @@ import {
   Signup,
   VideoDetail,
   LikedVideos,
+  History,
+  Playlist,
+  PlaylistDetail,
 } from "./pages";
 import { ToasterWrapper } from "./utils";
 import { useAuth } from "./context/AuthContext";
@@ -24,6 +27,9 @@ function App() {
         <Route path="/trending" element={<Trending />} />
         <Route path="/watch/:videoId" element={<VideoDetail />} />
         <Route path="/liked-videos" element={<LikedVideos />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/playlist" element={<Playlist />} />
+        <Route path="/playlist/:playlistId" element={<PlaylistDetail />} />
         {!isLoggedIn && <Route path="/signup" element={<Signup />} />}
         {!isLoggedIn && <Route path="/login" element={<Login />} />}
         <Route path="/mock" element={<Mockman />} />
