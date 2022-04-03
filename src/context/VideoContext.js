@@ -2,11 +2,12 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 import axios from "axios";
 import { videoReducer } from "../reducers";
 import { useAuth } from "../context/AuthContext";
-import { getLikedVideosService } from "../services/likedVideos/likedVideosService";
+import { getLikedVideosService } from "../services";
+import { getHistoryService } from "../services";
 
 const initialState = {
   videos: [],
-  historyVideos: [],
+  history: [],
   likedVideos: [],
   filters: {
     category: "All",
@@ -39,6 +40,7 @@ const VideoProvider = ({ children }) => {
 
   useEffect(() => {
     token && getLikedVideosService(token, dispatch);
+    token && getHistoryService(token, dispatch);
   }, [token]);
 
   return (
