@@ -1,0 +1,191 @@
+.user-feedback {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.playlist-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+
+.playlist-modal-content {
+  width: 300px;
+  background-color: var(--bg-hover-blue);
+  border-radius: 2px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 10px 30px -14px;
+}
+
+.playlist-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: var(--gray-50);
+}
+
+.playlist-modal-title {
+  margin: 0;
+}
+
+.playlist-modal-body {
+  padding: 10px;
+  border-top: 1px solid var(--blue-600);
+  border-bottom: 1px solid var(--blue-600);
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 1rem 1.5rem;
+  color: var(--gray-100);
+}
+
+.playlist-modal-body::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+}
+
+.playlist-modal-body::-webkit-scrollbar {
+  background-color: var(--blue-600);
+  width: 12px;
+}
+
+.playlist-modal-footer {
+  padding: 0.5rem 1.5rem;
+}
+
+.create-playlist-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  justify-content: flex-start;
+  border: none;
+  font-size: 14px;
+  color: var(--gray-50);
+  gap: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.create-playlist-btn .material-icons-outlined {
+  margin-left: -5px;
+}
+
+.create-playlist-btn.hide {
+  display: none;
+}
+
+.playlist-modal-form {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.playlist-modal-form.show {
+  display: flex;
+}
+
+.modal-form-label {
+  color: var(--gray-300);
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+.playlist-name-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--gray-500);
+  font-size: 14px;
+  color: var(--gray-50);
+}
+
+.playlist-name-input:focus {
+  outline: none;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+}
+
+.form-btn {
+  background-color: transparent;
+  color: var(--light-blue);
+  width: min-content;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.playlist-checkbox {
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.playlist-checkbox .label {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0;
+  padding-left: 36px;
+  cursor: pointer;
+}
+
+.playlist-checkbox .custom-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 2px solid var(--gray-300);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.playlist-modal .custom-input:checked ~ .custom-checkmark {
+  background-color: var(--light-blue);
+  border: 2px solid var(--light-blue);
+}
+
+.custom-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.playlist-checkbox .custom-input:checked ~ .custom-checkmark:after {
+  display: block;
+}
+
+.playlist-checkbox .custom-checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
