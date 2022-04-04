@@ -32,6 +32,11 @@ import {
   addVideoToPlaylistHandler,
   removeVideoFromPlaylistHandler,
 } from "./backend/controllers/PlaylistController";
+import {
+  getWatchLaterHandler,
+  addItemToWatchLater,
+  removeItemFromWatchLater,
+} from "./backend/controllers/WatchLaterController";
 import { users } from "./backend/db/users";
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -47,21 +52,23 @@ export function makeServer({ environment = "development" } = {}) {
       like: Model,
       history: Model,
       playlist: Model,
+      watchlater: Model,
     },
 
     // Runs on the start of the server
     seeds(server) {
       server.logging = false;
-      videos.forEach((item) => {
+      videos.forEach(item => {
         server.create("video", { ...item });
       });
-      categories.forEach((item) => server.create("category", { ...item }));
-      users.forEach((item) =>
+      categories.forEach(item => server.create("category", { ...item }));
+      users.forEach(item =>
         server.create("user", {
           ...item,
           likes: [],
           history: [],
           playlists: [],
+          watchlater: [],
         })
       );
     },
@@ -116,6 +123,14 @@ export function makeServer({ environment = "development" } = {}) {
         removeVideoFromHistoryHandler.bind(this)
       );
       this.delete("/user/history/all", clearHistoryHandler.bind(this));
+
+      // watchlater routes
+      this.get("/user/watchlater", getWatchLaterHandler.bind(this));
+      this.post("/user/watchlater", addItemToWatchLater.bind(this));
+      this.delete(
+        "/user/watchlater/:videoId",
+        removeItemFromWatchLater.bind(this)
+      );
     },
   });
 }
