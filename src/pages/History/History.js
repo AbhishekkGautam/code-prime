@@ -3,31 +3,40 @@ import { NavSidebarContainer, VideoListing } from "../../components";
 import { useVideoContext } from "../../context/VideoContext";
 import { useAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
-import "./LikedVideos.css";
-export const LikedVideos = () => {
-  const { state } = useVideoContext();
-  const { likedVideos, loading, error } = state;
+import "./History.css";
+import { clearHistoryService } from "../../services";
+export const History = () => {
+  const { state, dispatch } = useVideoContext();
+  const { history, loading, error } = state;
   const {
     state: { token, isLoggedIn },
   } = useAuth();
   return (
     <NavSidebarContainer>
-      <div className="liked-videos-list">
+      <div className="history-videos-list">
         {token && isLoggedIn ? (
           <>
-            <p className="liked-top-title">Liked Videos</p>
+            <div className="history-top-section">
+              <p className="history-top-title">History</p>
+              <button
+                className="btn btn-sm clear-history-btn"
+                onClick={() => clearHistoryService(token, dispatch)}
+              >
+                Clear History
+              </button>
+            </div>
             {loading ? (
               <div className="loader-container">Loading...</div>
             ) : error ? (
               <p>{error.status}</p>
             ) : (
-              <VideoListing videos={likedVideos} />
+              <VideoListing videos={history} />
             )}
           </>
         ) : (
           <div className="user-message-container">
             <h3>You're logged out.</h3>
-            <p>Log in to view your liked videos.</p>
+            <p>Log in to view your history.</p>
             <Link className="btn btn-primary" to="/login">
               Login
             </Link>

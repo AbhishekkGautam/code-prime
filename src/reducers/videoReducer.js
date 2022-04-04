@@ -6,6 +6,10 @@ import {
   GET_LIKED_VIDEOS,
   LIKE_VIDEO,
   DISLIKE_VIDEO,
+  GET_HISTORY,
+  ADD_VIDEO_TO_HISTORY,
+  DELETE_VIDEO_FROM_HISTORY,
+  CLEAR_HISTORY,
 } from "./actions";
 
 export const videoReducer = (state, { type, payload }) => {
@@ -24,6 +28,14 @@ export const videoReducer = (state, { type, payload }) => {
       return { ...state, likedVideos: payload };
     case DISLIKE_VIDEO:
       return { ...state, likedVideos: payload };
+    case GET_HISTORY:
+      return { ...state, loading: false, history: payload };
+    case ADD_VIDEO_TO_HISTORY:
+      return { ...state, history: payload };
+    case DELETE_VIDEO_FROM_HISTORY:
+      return { ...state, history: payload };
+    case CLEAR_HISTORY:
+      return { ...state, history: payload };
     default:
       return state;
   }

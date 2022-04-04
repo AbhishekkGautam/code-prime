@@ -35,7 +35,7 @@ export const HorizontalCard = ({ trendingVideo }) => {
             <p class="video-description hide-on-mobile">{description}</p>
           </div>
         </div>
-        <MoreOptionsModal />
+        <MoreOptionsModal video={trendingVideo} videoId={videoId} />
       </div>
     </div>
   );

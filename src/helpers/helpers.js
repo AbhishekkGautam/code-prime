@@ -18,3 +18,6 @@ export const getFilteredVideos = (videos, state) => {
 
 export const getVideoDetailsById = (videos, videoId) =>
   videos?.find(video => video._id === videoId);
+
+export const getPlaylistDetailsById = (playlists, playlistId) =>
+  playlists?.find(playlist => playlist._id === playlistId);

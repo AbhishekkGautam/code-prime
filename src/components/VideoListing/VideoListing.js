@@ -8,8 +8,34 @@ import {
   trimExtraChars,
 } from "../../utils";
 import { MoreOptionsModal } from "../MoreOptionsModal/MoreOptionsModal";
+import { addVideoToHistoryService } from "../../services";
+import { useAuth } from "../../context/AuthContext";
+import { useVideoContext } from "../../context/VideoContext";
+import { ADD_VIDEO_TO_HISTORY } from "../../reducers/actions";
+import { deleteVideoFromHistoryService } from "../../services/history/historyService";
 
-export const VideoListing = ({ videos }) => {
+export const VideoListing = ({ videos, playlistId }) => {
+  const {
+    state: { token },
+  } = useAuth();
+  const {
+    state: { history },
+    dispatch,
+  } = useVideoContext();
+
+  const historyHandler = (video, videoId) => {
+    let alreadyInHistory = history?.find(video => video._id === videoId);
+    if (alreadyInHistory) {
+      const filteredHistory = history.filter(video => video._id !== videoId);
+      dispatch({
+        type: ADD_VIDEO_TO_HISTORY,
+        payload: [...filteredHistory, { ...video }],
+      });
+    } else {
+      return addVideoToHistoryService(video, token, dispatch);
+    }
+  };
+
   return (
     <div className="videos-container">
       {videos &&
@@ -24,7 +50,11 @@ export const VideoListing = ({ videos }) => {
           } = video;
           return (
             <div className="video" key={videoId}>
-              <Link to={`/watch/${videoId}`} className="thumbnail">
+              <Link
+                to={`/watch/${videoId}`}
+                className="thumbnail"
+                onClick={() => historyHandler(video, videoId)}
+              >
                 <img
                   className="img-responsive"
                   src={thumbnailGenerator(videoId)}
@@ -43,7 +73,17 @@ export const VideoListing = ({ videos }) => {
                     </span>
                   </div>
                 </div>
-                <MoreOptionsModal />
+                <MoreOptionsModal
+                  video={video}
+                  videos={videos}
+                  videoId={videoId}
+                  playlistId={playlistId}
+                  componentPath="/history"
+                  deleteOptionName="Remove from History"
+                  deleteIconHandler={() =>
+                    deleteVideoFromHistoryService(videoId, token, dispatch)
+                  }
+                />
               </div>
             </div>
           );

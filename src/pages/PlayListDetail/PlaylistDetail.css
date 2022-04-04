@@ -1,0 +1,76 @@
+.playlist-videos-list {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  overflow-y: scroll;
+  padding-top: 1rem;
+}
+
+.playlist-details-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.playlist-details-top-section .clear-history-btn {
+  background-color: var(--blue-600);
+  color: var(--gray-100);
+  font-size: 12px;
+}
+
+.playlist-details-top-title {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--gray-300);
+}
+
+.user-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray-500);
+}
+
+.user-message-container p {
+  margin-top: 0.6rem;
+}
+
+.user-message-container .btn {
+  margin-top: 3rem;
+  background-color: var(--blue-600);
+  padding: 0.5rem 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .playlist-videos-list {
+    width: calc(100% - 95px);
+    padding: 0 1.5rem;
+    padding-top: 1.5rem;
+    margin-left: 95px;
+    margin-left: 95px;
+  }
+  .playlist-details-top-section .clear-history-btn {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .playlist-videos-list {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+  }
+  .playlist-details-top-title {
+    font-size: 16px;
+  }
+  .user-message-container {
+    width: 90%;
+    height: 90%;
+  }
+}
