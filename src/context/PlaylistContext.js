@@ -21,8 +21,6 @@ const PlaylistProvider = ({ children }) => {
     token && getAllPlaylistsService(token, dispatch);
   }, [token]);
 
-  console.log(state.error);
-
   return (
     <PlaylistContext.Provider value={{ state, dispatch }}>
       {children}

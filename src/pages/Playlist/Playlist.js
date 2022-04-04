@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   AddPlaylistModal,
   NavSidebarContainer,
   PlaylistCards,
 } from "../../components";
 import { useAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
 import "./Playlist.css";
 import { usePlaylist } from "../../context/PlaylistContext";
 

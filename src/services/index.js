@@ -22,3 +22,9 @@ export {
   deleteVideoFromPlaylistService,
   toggleCheckbox,
 } from "./playlist/playlistService";
+
+export {
+  getWatchLaterService,
+  addVideoToWatchLaterService,
+  deleteVideoFromWatchLaterService,
+} from "./watchLater/watchLaterService";

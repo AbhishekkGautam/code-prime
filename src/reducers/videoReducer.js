@@ -10,6 +10,9 @@ import {
   ADD_VIDEO_TO_HISTORY,
   DELETE_VIDEO_FROM_HISTORY,
   CLEAR_HISTORY,
+  GET_WATCH_LATER,
+  ADD_VIDEO_TO_WATCH_LATER,
+  DELETE_VIDEO_FROM_WATCH_LATER,
 } from "./actions";
 
 export const videoReducer = (state, { type, payload }) => {
@@ -36,6 +39,12 @@ export const videoReducer = (state, { type, payload }) => {
       return { ...state, history: payload };
     case CLEAR_HISTORY:
       return { ...state, history: payload };
+    case GET_WATCH_LATER:
+      return { ...state, loading: false, watchLater: payload };
+    case ADD_VIDEO_TO_WATCH_LATER:
+      return { ...state, watchLater: payload };
+    case DELETE_VIDEO_FROM_WATCH_LATER:
+      return { ...state, watchLater: payload };
     default:
       return state;
   }
