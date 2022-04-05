@@ -21,9 +21,8 @@ export const WatchLater = () => {
       <div className="history-videos-list">
         {token && isLoggedIn ? (
           <>
-            <div className="history-top-section">
-              <p className="history-top-title">Watch Later</p>
-            </div>
+            <p className="history-top-title">Watch Later</p>
+
             {loading ? (
               <div className="loader-container">Loading...</div>
             ) : error ? (

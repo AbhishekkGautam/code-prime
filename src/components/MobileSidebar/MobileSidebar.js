@@ -90,7 +90,7 @@ export const MobileSidebar = ({ showSidebar, toggleSidebar }) => {
         </ul>
         {isLoggedIn && (
           <button onClick={logoutHandler} className="btn login-sidebar-btn">
-            Logout
+            Log out
           </button>
         )}
         {!isLoggedIn && (
@@ -101,7 +101,7 @@ export const MobileSidebar = ({ showSidebar, toggleSidebar }) => {
             }}
             className="btn login-sidebar-btn"
           >
-            Login
+            Log in
           </button>
         )}
       </div>

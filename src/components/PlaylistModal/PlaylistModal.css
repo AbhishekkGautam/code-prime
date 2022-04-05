@@ -74,6 +74,7 @@
 
 .create-playlist-btn .material-icons-outlined {
   margin-left: -5px;
+  color: var(--gray-50);
 }
 
 .create-playlist-btn.hide {

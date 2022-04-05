@@ -1,5 +1,5 @@
-import React from "react";
-import { Navbar } from "../../components";
+import React, { useState } from "react";
+import { Navbar, PlaylistModal } from "../../components";
 import "./VideoDetail.css";
 import { useParams, useNavigate } from "react-router";
 import { RiShareForwardLine } from "react-icons/ri";
@@ -7,9 +7,15 @@ import { getVideoDetailsById } from "../../helpers";
 import { useVideoContext } from "../../context/VideoContext";
 import { useAuth } from "../../context/AuthContext";
 import { viewsFormatter, timeAgoFormatter } from "../../utils";
-import { toggleLike } from "../../services";
+import {
+  addVideoToWatchLaterService,
+  deleteVideoFromWatchLaterService,
+  toggleLike,
+} from "../../services";
+import { usePlaylist } from "../../context/PlaylistContext";
 
 export const VideoDetail = () => {
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
   const { videoId } = useParams();
   const navigate = useNavigate();
   const {
@@ -21,6 +27,11 @@ export const VideoDetail = () => {
     state: { token },
   } = useAuth();
 
+  const {
+    dispatch: watchLaterDispatch,
+    state: { watchLater },
+  } = useVideoContext();
+
   const videoInfo = getVideoDetailsById(videos, videoId);
 
   const { _id, title, views, uploadedOn, avatar, channelName, description } =
@@ -29,6 +40,14 @@ export const VideoDetail = () => {
   const isVideoAlreadyLiked = likedVideos?.find(
     likedVideo => likedVideo._id === _id
   );
+
+  const videoExistInWatchLater = watchLater?.find(
+    video => video._id === videoId
+  );
+
+  const saveToWatchLater = () => {
+    addVideoToWatchLaterService(videoInfo, token, watchLaterDispatch);
+  };
 
   return (
     <main>
@@ -83,11 +102,39 @@ export const VideoDetail = () => {
                     <RiShareForwardLine className="material-icons-outlined" />
                     <span>Share</span>
                   </button>
-                  <button className="action-icon-btn">
-                    <i className="material-icons-outlined">watch_later</i>
-                    <span>Watch later</span>
-                  </button>
-                  <button className="action-icon-btn">
+
+                  {token && videoExistInWatchLater ? (
+                    <button
+                      className="action-icon-btn"
+                      onClick={() => {
+                        deleteVideoFromWatchLaterService(
+                          videoId,
+                          token,
+                          watchLaterDispatch
+                        );
+                      }}
+                    >
+                      <i className="material-icons-outlined">block</i>
+                      <span>Remove from Watch later</span>
+                    </button>
+                  ) : (
+                    <button
+                      className="action-icon-btn"
+                      onClick={() =>
+                        token ? saveToWatchLater() : navigate("/login")
+                      }
+                    >
+                      <i className="material-icons-outlined">watch_later</i>
+                      <span>Save to Watch later</span>
+                    </button>
+                  )}
+
+                  <button
+                    className="action-icon-btn"
+                    onClick={() => {
+                      token ? setShowPlaylistModal(true) : navigate("/login");
+                    }}
+                  >
                     <i className="material-icons-outlined">playlist_add</i>
                     <span>Save to playlist</span>
                   </button>
@@ -119,6 +166,12 @@ export const VideoDetail = () => {
           </div>
         </div>
       </div>
+      <PlaylistModal
+        video={videoInfo}
+        videoId={videoId}
+        show={showPlaylistModal}
+        close={() => setShowPlaylistModal(false)}
+      />
     </main>
   );
 };

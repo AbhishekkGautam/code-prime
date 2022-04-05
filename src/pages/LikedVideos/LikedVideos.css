@@ -8,11 +8,8 @@
 }
 .liked-top-title {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--gray-300);
-  margin-bottom: 16px;
-  background-color: var(--bg-hover-blue);
-  padding: 4px 6px;
 }
 
 .user-message-container {
@@ -53,8 +50,7 @@
     margin-left: 250px;
   }
   .liked-top-title {
-    font-size: 14px;
-    padding: 6px 8px;
+    font-size: 16px;
   }
   .user-message-container {
     width: 90%;

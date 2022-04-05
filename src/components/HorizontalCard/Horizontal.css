@@ -10,6 +10,11 @@
   margin-right: 16px;
 }
 
+.trending-video .thumbnail .horizontal.img-responsive {
+  min-width: 135px;
+  min-height: 80px;
+}
+
 .trending-video .video-details {
   display: flex;
   align-items: flex-start;
@@ -96,7 +101,7 @@
 
 @media only screen and (min-width: 1400px) {
   .trending-video {
-    width: 70%;
+    width: 80%;
   }
   .trending-video .video-info .video-description {
     font-size: 12px;

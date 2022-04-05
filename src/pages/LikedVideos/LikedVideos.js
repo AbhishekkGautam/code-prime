@@ -20,6 +20,10 @@ export const LikedVideos = () => {
               <div className="loader-container">Loading...</div>
             ) : error ? (
               <p>{error.status}</p>
+            ) : likedVideos?.length === 0 ? (
+              <div className="user-message-container">
+                <p>No videos added yet.</p>
+              </div>
             ) : (
               <VideoListing videos={likedVideos} />
             )}
