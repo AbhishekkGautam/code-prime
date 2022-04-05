@@ -7,9 +7,9 @@ export const Trending = () => {
   return (
     <NavSidebarContainer>
       <div className="trending-videos-list">
-        <p class="trending-top-title">
+        <p className="trending-top-title">
           <span>Trending</span>
-          <i class="material-icons">local_fire_department</i>
+          <i className="material-icons">local_fire_department</i>
         </p>
         <TrendingList />
       </div>
