@@ -29,6 +29,10 @@ export const History = () => {
               <div className="loader-container">Loading...</div>
             ) : error ? (
               <p>{error.status}</p>
+            ) : history?.length === 0 ? (
+              <div className="user-message-container">
+                <p>No history available.</p>
+              </div>
             ) : (
               <VideoListing videos={history} />
             )}

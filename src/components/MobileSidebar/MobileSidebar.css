@@ -1,0 +1,97 @@
+.sidebar-bg {
+  width: 100vw;
+  z-index: 9;
+  visibility: hidden;
+  opacity: 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--modal-bg-100);
+  overflow: hidden;
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.43, 0.96);
+}
+
+.sidebar-bg .sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 300px;
+  z-index: 4;
+  background-color: var(--secondary-color);
+  color: var(--gray-50);
+  transform: translate(-100%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.43, 0.96);
+  padding: 2rem 1rem 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+}
+
+.sidebar-links .link-item {
+  color: var(--gray-50);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.2rem 0.5rem;
+  gap: 12px;
+}
+
+.link-item.active {
+  color: var(--light-blue);
+}
+
+.link-item.active .material-icons-outlined {
+  color: var(--light-blue);
+}
+
+.link-item .icon {
+  font-size: 1.3rem;
+}
+
+.link-item .material-icons-outlined {
+  color: var(--gray-50);
+}
+
+.link-item span {
+  padding-top: 2px;
+}
+
+.sidebar .sidebar-btn {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.login-sidebar-btn {
+  margin-top: 4rem;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--gray-50);
+}
+
+.sidebar-bg.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar.reveal {
+  transform: translateX(0);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--bg-hover-blue);
+  border: none;
+  margin: 16px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar-bg {
+    display: none;
+  }
+}

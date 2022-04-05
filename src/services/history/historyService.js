@@ -5,10 +5,11 @@ import {
   ADD_VIDEO_TO_HISTORY,
   DELETE_VIDEO_FROM_HISTORY,
   CLEAR_HISTORY,
+  LOADING,
 } from "../../reducers/actions";
 
 export const getHistoryService = async (token, dispatch) => {
-  dispatch({ type: "LOADING" });
+  dispatch({ type: LOADING });
   try {
     const { data, status } = await axios.get("/api/user/history", {
       headers: { authorization: token },

@@ -33,7 +33,7 @@ export const PlaylistDetail = () => {
             </div>
             {videos.length === 0 ? (
               <div className="user-message-container">
-                <p>No videos added yet.</p>
+                <p>No videos in this playlist yet.</p>
               </div>
             ) : (
               <VideoListing videos={videos} playlistId={playlistId} />

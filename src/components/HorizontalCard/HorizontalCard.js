@@ -1,4 +1,6 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
 import "./Horizontal.css";
 import {
   viewsFormatter,
@@ -6,8 +8,32 @@ import {
   trimExtraChars,
 } from "../../utils";
 import { MoreOptionsModal } from "../MoreOptionsModal/MoreOptionsModal";
+import { addVideoToHistoryService } from "../../services";
+import { useAuth } from "../../context/AuthContext";
+import { useVideoContext } from "../../context/VideoContext";
+import { ADD_VIDEO_TO_HISTORY } from "../../reducers/actions";
 
 export const HorizontalCard = ({ trendingVideo }) => {
+  const {
+    state: { token },
+  } = useAuth();
+  const {
+    state: { history },
+    dispatch,
+  } = useVideoContext();
+
+  const historyHandler = (video, videoId) => {
+    let alreadyInHistory = history?.find(video => video._id === videoId);
+    if (alreadyInHistory) {
+      const filteredHistory = history.filter(video => video._id !== videoId);
+      dispatch({
+        type: ADD_VIDEO_TO_HISTORY,
+        payload: [...filteredHistory, { ...video }],
+      });
+    } else {
+      return addVideoToHistoryService(video, token, dispatch);
+    }
+  };
   const {
     _id: videoId,
     title,
@@ -17,13 +43,18 @@ export const HorizontalCard = ({ trendingVideo }) => {
   } = trendingVideo;
   return (
     <div className="trending-video" key={videoId}>
-      <div className="thumbnail">
+      <Link
+        to={`/watch/${videoId}`}
+        className="thumbnail"
+        onClick={() => historyHandler(trendingVideo, videoId)}
+      >
         <img
-          className="img-responsive"
+          className="horizontal img-responsive"
           src={thumbnailGenerator(videoId)}
           alt={title}
         />
-      </div>
+      </Link>
+
       <div className="video-details">
         <div className="info-container">
           <div className="video-info">
