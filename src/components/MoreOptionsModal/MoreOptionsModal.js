@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { RiShareForwardLine } from "react-icons/ri";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./MoreOptionsModal.css";
 import { PlaylistModal } from "../PlaylistModal/PlaylistModal";
 import {
@@ -25,6 +25,7 @@ export const MoreOptionsModal = ({
   const [showOptionsModal, setShowOptionsModal] = useState(false);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const {
     state: { token },
@@ -54,6 +55,16 @@ export const MoreOptionsModal = ({
     video => video._id === videoId
   );
 
+  const saveToWatchLater = () => {
+    addVideoToWatchLaterService(video, token, watchLaterDispatch);
+    setShowOptionsModal(false);
+  };
+
+  const toggleAddPlaylistModal = () => {
+    setShowPlaylistModal(true);
+    setShowOptionsModal(false);
+  };
+
   return (
     <div className="more-options" ref={ref}>
       <i
@@ -73,7 +84,7 @@ export const MoreOptionsModal = ({
             </button>
           ) : null}
 
-          {pathname === `/playlist/${playlistId}` ? (
+          {token && pathname === `/playlist/${playlistId}` ? (
             <button
               className="option-modal-btn"
               onClick={() =>
@@ -89,7 +100,7 @@ export const MoreOptionsModal = ({
               <span>Remove from Playlist</span>
             </button>
           ) : null}
-          {videoExistInWatchLater || pathname === "/watch-later" ? (
+          {token && videoExistInWatchLater ? (
             <button
               className="option-modal-btn"
               onClick={() => {
@@ -107,10 +118,7 @@ export const MoreOptionsModal = ({
           ) : (
             <button
               className="option-modal-btn"
-              onClick={() => {
-                addVideoToWatchLaterService(video, token, watchLaterDispatch);
-                setShowOptionsModal(false);
-              }}
+              onClick={() => (token ? saveToWatchLater() : navigate("/login"))}
             >
               <i className="material-icons-outlined">watch_later</i>
               <span>Save to Watch later</span>
@@ -120,8 +128,7 @@ export const MoreOptionsModal = ({
             <button
               className="option-modal-btn"
               onClick={() => {
-                setShowPlaylistModal(true);
-                setShowOptionsModal(false);
+                token ? toggleAddPlaylistModal() : navigate("/login");
               }}
             >
               <i className="material-icons-outlined">playlist_add</i>
