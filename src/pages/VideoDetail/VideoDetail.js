@@ -12,7 +12,6 @@ import {
   deleteVideoFromWatchLaterService,
   toggleLike,
 } from "../../services";
-import { usePlaylist } from "../../context/PlaylistContext";
 
 export const VideoDetail = () => {
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
