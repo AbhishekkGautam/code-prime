@@ -15,6 +15,7 @@ const initialState = {
   watchLater: [],
   filters: {
     category: "All",
+    search: "",
   },
   loading: false,
   error: null,

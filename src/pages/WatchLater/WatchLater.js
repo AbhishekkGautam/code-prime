@@ -14,8 +14,6 @@ export const WatchLater = () => {
   const { state } = useVideoContext();
   const { watchLater, error, loading } = state;
 
-  console.log(watchLater);
-
   return (
     <NavSidebarContainer>
       <div className="history-videos-list">

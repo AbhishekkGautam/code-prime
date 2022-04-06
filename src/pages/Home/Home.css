@@ -1,3 +1,25 @@
+.user-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray-500);
+}
+
+.user-message-container p {
+  margin-top: 0.6rem;
+}
+
+.user-message-container .btn {
+  margin-top: 3rem;
+  background-color: var(--blue-600);
+  padding: 0.5rem 1.5rem;
+}
+
 .category-tags-container {
   background-color: var(--secondary-color);
   position: fixed;
@@ -65,6 +87,15 @@
   padding-top: 90px;
 }
 
+.videos-list::-webkit-scrollbar-thumb {
+  background-color: var(--blue-600);
+}
+
+.videos-list::-webkit-scrollbar {
+  background-color: var(--primary-color);
+  width: 12px;
+}
+
 @media only screen and (min-width: 768px) {
   .category-tags-container {
     left: 95px;
@@ -88,5 +119,9 @@
     width: calc(100% - 250px);
     margin-left: 250px;
     padding-top: 85px;
+  }
+  .user-message-container {
+    width: 90%;
+    height: 90%;
   }
 }

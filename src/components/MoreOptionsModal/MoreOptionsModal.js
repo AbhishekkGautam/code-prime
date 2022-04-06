@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { RiShareForwardLine } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./MoreOptionsModal.css";
 import { PlaylistModal } from "../PlaylistModal/PlaylistModal";
@@ -135,10 +134,10 @@ export const MoreOptionsModal = ({
               <span>Save to playlist</span>
             </button>
           ) : null}
-          <button className="option-modal-btn">
+          {/* <button className="option-modal-btn">
             <RiShareForwardLine className="material-icons-outlined" />
             <span>Share</span>
-          </button>
+          </button> */}
         </div>
       )}
       <PlaylistModal

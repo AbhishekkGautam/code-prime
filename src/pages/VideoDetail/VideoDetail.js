@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Navbar, PlaylistModal } from "../../components";
-import "./VideoDetail.css";
 import { useParams, useNavigate } from "react-router";
-import { RiShareForwardLine } from "react-icons/ri";
+import { Navbar, PlaylistModal, VideoNotes } from "../../components";
+import "./VideoDetail.css";
 import { getVideoDetailsById } from "../../helpers";
 import { useVideoContext } from "../../context/VideoContext";
 import { useAuth } from "../../context/AuthContext";
@@ -33,8 +32,16 @@ export const VideoDetail = () => {
 
   const videoInfo = getVideoDetailsById(videos, videoId);
 
-  const { _id, title, views, uploadedOn, avatar, channelName, description } =
-    videoInfo || {};
+  const {
+    _id,
+    title,
+    views,
+    uploadedOn,
+    avatar,
+    channelName,
+    description,
+    notes,
+  } = videoInfo || {};
 
   const isVideoAlreadyLiked = likedVideos?.find(
     likedVideo => likedVideo._id === _id
@@ -97,10 +104,10 @@ export const VideoDetail = () => {
                       </>
                     )}
                   </button>
-                  <button className="action-icon-btn">
+                  {/* <button className="action-icon-btn">
                     <RiShareForwardLine className="material-icons-outlined" />
                     <span>Share</span>
-                  </button>
+                  </button> */}
 
                   {token && videoExistInWatchLater ? (
                     <button
@@ -160,8 +167,7 @@ export const VideoDetail = () => {
             </div>
           </div>
           <div className="note-container">
-            <p className="text-normal">Take Notes...✍️ </p>
-            <hr />
+            <VideoNotes notes={notes} videoId={videoId} />
           </div>
         </div>
       </div>

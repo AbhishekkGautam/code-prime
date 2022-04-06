@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [state.token]);
 
   const signupHandler = async (firstName, lastName, email, password) => {
     const toastId = toast.loading("Creating your account...");

@@ -1,4 +1,4 @@
-.liked-videos-list {
+.profile-section {
   background-color: var(--primary-color);
   width: 100%;
   height: 100%;
@@ -6,11 +6,33 @@
   overflow-y: scroll;
   padding-top: 1rem;
 }
-.liked-top-title {
+.profile-top-title {
   display: inline-block;
   font-size: 14px;
   color: var(--gray-300);
   margin-bottom: 1rem;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.info-section {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  width: max-content;
+  height: max-content;
+  padding: 2rem;
+  color: var(--gray-100);
+}
+.user-info span {
+  color: var(--light-blue);
 }
 
 .user-message-container {
@@ -36,7 +58,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .liked-videos-list {
+  .profile-section {
     width: calc(100% - 95px);
     padding: 0 1.5rem;
     padding-top: 1.5rem;
@@ -46,11 +68,11 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .liked-videos-list {
+  .profile-section {
     width: calc(100% - 250px);
     margin-left: 250px;
   }
-  .liked-top-title {
+  .profile-top-title {
     font-size: 16px;
   }
   .user-message-container {

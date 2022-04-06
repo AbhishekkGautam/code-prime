@@ -77,4 +77,55 @@ export const videos = [
     description:
       "Welcome to neogcamp. We have learned programming and web basics in previous lessons. This time we will use both things to create a dynamic app in a web browser. You'll learn about DOM scripting i.e. JS in the browser, calling servers, and getting data from there, taking user input and showing user output, and many more things.",
   },
+  {
+    _id: "4UZrsTqkcW4",
+    title:
+      "Full React Course 2020 - Learn Fundamentals, Hooks, Context API, React Router, Custom Hooks",
+    channelName: "freeCodeCamp.org",
+    views: 1826851,
+    uploadedOn: "Oct 6, 2020",
+    categoryName: "ReactJS",
+    avatar:
+      "https://yt3.ggpht.com/ytc/AKedOLRyPFojwY3CXV5ks5TwPrt2VifQn-nYNfkgLvVPkw=s48-c-k-c0x00ffffff-no-rj",
+    description:
+      "Learn the basics of React in this comprehensive course. You will learn about fundamentals, hooks, context API, react router, custom hooks, and more.",
+  },
+  {
+    _id: "RVFAyFWO4go",
+    title:
+      "React JS Full Course for Beginners | Complete All-in-One Tutorial | 9 Hours",
+    channelName: "Dave Gray",
+    views: 174302,
+    uploadedOn: "Sept 10, 2021",
+    categoryName: "ReactJS",
+    avatar:
+      "https://yt3.ggpht.com/ytc/AKedOLRqPNtch0_fMIHFWd6tlooAS3AwW4uLuM3NA8OeRg=s48-c-k-c0x00ffffff-no-rj",
+    description:
+      "This React JS Full Course for Beginners is an all-in-one beginner tutorial and complete course full of nearly 9 hours of React JS code and instruction to level up your programming skills. This course teaches modern React with functional components and hooks. Think of this React full course tutorial as a React JS video textbook with 23 clearly defined chapters.",
+  },
+  {
+    _id: "zrs7u6bdbUw",
+    title: "Redux Tutorial - Beginner to Advanced",
+    channelName: "freeCodeCamp.org",
+    views: 86823,
+    uploadedOn: "Mar 3, 2022",
+    categoryName: "Redux",
+    avatar:
+      "https://yt3.ggpht.com/ytc/AKedOLRyPFojwY3CXV5ks5TwPrt2VifQn-nYNfkgLvVPkw=s48-c-k-c0x00ffffff-no-rj",
+    description:
+      "Learn how to use Redux in this full course for beginners. You will learn how to use Redux with ReduxToolkit Library to create an application involving HTTP requests.",
+  },
+  {
+    _id: "_ivIUCSOZ78",
+    title:
+      "Build and Deploy Your First Modern React Native App | NFT Marketplace Course - Extremely Easy!",
+    channelName: "JavaScript Mastery",
+    views: 44201,
+    uploadedOn: "Apr 1, 2022",
+    categoryName: "React Native",
+    avatar:
+      "https://yt3.ggpht.com/ytc/AKedOLSmjxIU9yuwvDGSuHZ88rKyfjRSmHJeKFmQZbnFiQ=s48-c-k-c0x00ffffff-no-rj",
+    description:
+      "Master React Native by building a modern NFT Marketplace iOS and Android React Native Application in one video! Alongside developing the application, you'll create a great landing page to showcase all of your app's features! This is a full React Native Crash Course Tutorial video; enjoy!",
+  },
 ];

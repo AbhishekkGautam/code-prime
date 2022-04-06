@@ -37,6 +37,12 @@ import {
   addItemToWatchLater,
   removeItemFromWatchLater,
 } from "./backend/controllers/WatchLaterController";
+
+import {
+  addItemToNotes,
+  removeItemFromNotes,
+} from "./backend/controllers/NoteController";
+
 import { users } from "./backend/db/users";
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -53,13 +59,14 @@ export function makeServer({ environment = "development" } = {}) {
       history: Model,
       playlist: Model,
       watchlater: Model,
+      notes: Model,
     },
 
     // Runs on the start of the server
     seeds(server) {
       server.logging = false;
       videos.forEach(item => {
-        server.create("video", { ...item });
+        server.create("video", { ...item, notes: [] });
       });
       categories.forEach(item => server.create("category", { ...item }));
       users.forEach(item =>
@@ -88,6 +95,10 @@ export function makeServer({ environment = "development" } = {}) {
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
       this.get("/categories/:categoryId", getCategoryHandler.bind(this));
+
+      // notes routes (private)
+      this.post("/video/:videoId", addItemToNotes.bind(this));
+      this.delete("/video/:videoId/:noteId", removeItemFromNotes.bind(this));
 
       // likes routes (private)
       this.get("/user/likes", getLikedVideosHandler.bind(this));

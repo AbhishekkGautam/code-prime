@@ -14,18 +14,21 @@ export const Home = () => {
 
   const filteredVideos = getFilteredVideos(videos, state);
 
+  const filterByCategoryHandler = uniqueCategory => {
+    dispatch({
+      type: "FILTER_BY_CATEGORY",
+      payload: uniqueCategory,
+    });
+    dispatch({ type: "FILTER_BY_SEARCH", payload: "" });
+  };
+
   return (
     <NavSidebarContainer>
       <div className="category-tags-container">
         {uniqueCategories?.map((uniqueCategory, id) => {
           return (
             <button
-              onClick={() =>
-                dispatch({
-                  type: "FILTER_BY_CATEGORY",
-                  payload: uniqueCategory,
-                })
-              }
+              onClick={() => filterByCategoryHandler(uniqueCategory)}
               className={`category-tag ${
                 filters.category === uniqueCategory && "active"
               }`}
@@ -41,6 +44,10 @@ export const Home = () => {
           <div className="loader-container">Loading...</div>
         ) : error ? (
           <p>{error.status}</p>
+        ) : filteredVideos.length <= 0 ? (
+          <div className="user-message-container">
+            <p>No videos matched the search keyword.</p>
+          </div>
         ) : (
           <VideoListing videos={filteredVideos} />
         )}

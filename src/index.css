@@ -26,6 +26,7 @@
   --white: #fff;
   --text-gray: rgb(165, 165, 165);
   --modal-bg-100: rgba(0, 0, 0, 0.4);
+  --modal-bg-300: rgba(0, 0, 0, 0.8);
 }
 
 /* body {
