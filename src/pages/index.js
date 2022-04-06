@@ -8,3 +8,4 @@ export { History } from "./History/History";
 export { Playlist } from "./Playlist/Playlist";
 export { PlaylistDetail } from "./PlayListDetail/PlaylistDetail";
 export { WatchLater } from "./WatchLater/WatchLater";
+export { Profile } from "./Profile/Profile";

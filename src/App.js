@@ -12,6 +12,7 @@ import {
   Playlist,
   PlaylistDetail,
   WatchLater,
+  Profile,
 } from "./pages";
 import { ToasterWrapper } from "./utils";
 import { useAuth } from "./context/AuthContext";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/playlist/:playlistId" element={<PlaylistDetail />} />
         <Route path="/watch-later" element={<WatchLater />} />
+        <Route path="/profile" element={<Profile />} />
         {!isLoggedIn && <Route path="/signup" element={<Signup />} />}
         {!isLoggedIn && <Route path="/login" element={<Login />} />}
         <Route path="/mock" element={<Mockman />} />
