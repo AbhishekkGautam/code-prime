@@ -44,6 +44,10 @@ export const Home = () => {
           <div className="loader-container">Loading...</div>
         ) : error ? (
           <p>{error.status}</p>
+        ) : filteredVideos.length <= 0 ? (
+          <div className="user-message-container">
+            <p>No videos matched the search keyword.</p>
+          </div>
         ) : (
           <VideoListing videos={filteredVideos} />
         )}
