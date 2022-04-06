@@ -28,3 +28,5 @@ export {
   addVideoToWatchLaterService,
   deleteVideoFromWatchLaterService,
 } from "./watchLater/watchLaterService";
+
+export { addNoteService, deleteNoteService } from "./notes/notesService";

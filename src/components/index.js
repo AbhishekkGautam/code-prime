@@ -8,3 +8,4 @@ export { PlaylistModal } from "./PlaylistModal/PlaylistModal";
 export { PlaylistCards } from "./PlaylistCards/PlaylistCards";
 export { AddPlaylistModal } from "./AddPlaylistModal/AddPlaylistModal";
 export { MobileSidebar } from "./MobileSidebar/MobileSidebar";
+export { VideoNotes } from "./VideoNotes/VideoNotes";

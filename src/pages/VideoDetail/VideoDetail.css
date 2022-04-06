@@ -22,7 +22,17 @@
   height: 250px;
   padding: 1rem;
   margin: 1rem;
-  color: var(--gray-100);
+  color: var(--light-blue);
+  overflow-y: scroll;
+}
+
+.single-video-container .note-container::-webkit-scrollbar-thumb {
+  background-color: var(--bg-hover-blue);
+}
+
+.single-video-container .note-container::-webkit-scrollbar {
+  background-color: var(--secondary-color);
+  width: 12px;
 }
 
 .iframe-container {
@@ -189,6 +199,7 @@ hr {
     height: 100%;
     margin: 0rem;
     max-height: 500px;
+    padding: 1.5rem;
   }
 
   .stats-and-action-icons {
