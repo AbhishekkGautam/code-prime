@@ -13,6 +13,9 @@ import {
   GET_WATCH_LATER,
   ADD_VIDEO_TO_WATCH_LATER,
   DELETE_VIDEO_FROM_WATCH_LATER,
+  FILTER_BY_SEARCH,
+  ADD_NOTE,
+  DELETE_NOTE,
 } from "./actions";
 
 export const videoReducer = (state, { type, payload }) => {
@@ -25,6 +28,8 @@ export const videoReducer = (state, { type, payload }) => {
       return { ...state, loading: false, videos: payload };
     case FILTER_BY_CATEGORY:
       return { ...state, filters: { ...state.filters, category: payload } };
+    case FILTER_BY_SEARCH:
+      return { ...state, filters: { ...state.filters, search: payload } };
     case GET_LIKED_VIDEOS:
       return { ...state, loading: false, likedVideos: payload };
     case LIKE_VIDEO:
@@ -45,6 +50,20 @@ export const videoReducer = (state, { type, payload }) => {
       return { ...state, watchLater: payload };
     case DELETE_VIDEO_FROM_WATCH_LATER:
       return { ...state, watchLater: payload };
+    case ADD_NOTE:
+      return {
+        ...state,
+        videos: state.videos.map(video =>
+          video._id === payload._id ? payload : video
+        ),
+      };
+    case DELETE_NOTE:
+      return {
+        ...state,
+        videos: state.videos.map(video =>
+          video._id === payload._id ? payload : video
+        ),
+      };
     default:
       return state;
   }
