@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router";
 import { Navbar, PlaylistModal, VideoNotes } from "../../components";
 import "./VideoDetail.css";
-import { useParams, useNavigate } from "react-router";
-import { RiShareForwardLine } from "react-icons/ri";
 import { getVideoDetailsById } from "../../helpers";
 import { useVideoContext } from "../../context/VideoContext";
 import { useAuth } from "../../context/AuthContext";

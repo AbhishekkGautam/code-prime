@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { RiShareForwardLine } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./MoreOptionsModal.css";
 import { PlaylistModal } from "../PlaylistModal/PlaylistModal";
