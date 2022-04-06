@@ -14,19 +14,21 @@ export const Home = () => {
 
   const filteredVideos = getFilteredVideos(videos, state);
 
+  const filterByCategoryHandler = uniqueCategory => {
+    dispatch({
+      type: "FILTER_BY_CATEGORY",
+      payload: uniqueCategory,
+    });
+    dispatch({ type: "FILTER_BY_SEARCH", payload: "" });
+  };
+
   return (
     <NavSidebarContainer>
       <div className="category-tags-container">
         {uniqueCategories?.map((uniqueCategory, id) => {
           return (
             <button
-              onClick={() => {
-                dispatch({
-                  type: "FILTER_BY_CATEGORY",
-                  payload: uniqueCategory,
-                });
-                dispatch({ type: "FILTER_BY_SEARCH", payload: "" });
-              }}
+              onClick={() => filterByCategoryHandler(uniqueCategory)}
               className={`category-tag ${
                 filters.category === uniqueCategory && "active"
               }`}
