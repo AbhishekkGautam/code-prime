@@ -14,16 +14,11 @@
   margin-bottom: 16px;
 }
 
-.history-top-section .clear-history-btn {
-  background-color: var(--blue-600);
-  color: var(--gray-100);
-  font-size: 12px;
-}
-
 .history-top-title {
   display: inline-block;
   font-size: 14px;
   color: var(--gray-300);
+  margin-bottom: 1rem;
 }
 
 .user-message-container {

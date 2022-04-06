@@ -135,10 +135,10 @@ export const MoreOptionsModal = ({
               <span>Save to playlist</span>
             </button>
           ) : null}
-          <button className="option-modal-btn">
+          {/* <button className="option-modal-btn">
             <RiShareForwardLine className="material-icons-outlined" />
             <span>Share</span>
-          </button>
+          </button> */}
         </div>
       )}
       <PlaylistModal

@@ -10,6 +10,7 @@
   display: inline-block;
   font-size: 14px;
   color: var(--gray-300);
+  margin-bottom: 1rem;
 }
 
 .user-message-container {
