@@ -65,6 +65,15 @@
   padding-top: 90px;
 }
 
+.videos-list::-webkit-scrollbar-thumb {
+  background-color: var(--blue-600);
+}
+
+.videos-list::-webkit-scrollbar {
+  background-color: var(--primary-color);
+  width: 12px;
+}
+
 @media only screen and (min-width: 768px) {
   .category-tags-container {
     left: 95px;

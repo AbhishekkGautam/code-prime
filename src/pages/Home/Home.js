@@ -20,12 +20,13 @@ export const Home = () => {
         {uniqueCategories?.map((uniqueCategory, id) => {
           return (
             <button
-              onClick={() =>
+              onClick={() => {
                 dispatch({
                   type: "FILTER_BY_CATEGORY",
                   payload: uniqueCategory,
-                })
-              }
+                });
+                dispatch({ type: "FILTER_BY_SEARCH", payload: "" });
+              }}
               className={`category-tag ${
                 filters.category === uniqueCategory && "active"
               }`}

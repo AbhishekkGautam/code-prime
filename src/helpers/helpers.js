@@ -15,7 +15,7 @@ export const getFilteredVideos = (videos, state) => {
   }
   if (state.filters.search !== "") {
     videosCopy = videosCopy.filter(video =>
-      video.title.toLowerCase().includes(state.filters.search)
+      video.title.toLowerCase().includes(state.filters.search.toLowerCase())
     );
   }
 
