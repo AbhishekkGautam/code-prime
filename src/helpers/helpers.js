@@ -8,14 +8,14 @@ export const getUniqueValues = (data, type) => {
 
 export const getFilteredVideos = (videos, state) => {
   let videosCopy = [...videos];
-  if (state.filters.category !== "All") {
-    videosCopy = videosCopy.filter(
-      video => video.categoryName === state.filters.category
-    );
-  }
   if (state.filters.search !== "") {
     videosCopy = videosCopy.filter(video =>
       video.title.toLowerCase().includes(state.filters.search.toLowerCase())
+    );
+  }
+  if (state.filters.category !== "All") {
+    videosCopy = videosCopy.filter(
+      video => video.categoryName === state.filters.category
     );
   }
 

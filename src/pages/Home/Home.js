@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ThreeDots } from "react-loader-spinner";
 import { NavSidebarContainer, VideoListing } from "../../components";
 import { useVideoContext } from "../../context/VideoContext";
 import { getUniqueValues, getFilteredVideos } from "../../helpers";
@@ -41,7 +42,9 @@ export const Home = () => {
       </div>
       <div className="videos-list">
         {loading ? (
-          <div className="loader-container">Loading...</div>
+          <div className="loader">
+            <ThreeDots color="#3ea3da" height={80} width={80} />
+          </div>
         ) : error ? (
           <p>{error.status}</p>
         ) : filteredVideos.length <= 0 ? (
