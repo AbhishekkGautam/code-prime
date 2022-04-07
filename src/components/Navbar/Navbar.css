@@ -121,7 +121,7 @@
   border: none;
   cursor: pointer;
   font-size: 17px;
-  color: var(--accent-color);
+  color: var(--light-blue);
   border-radius: 4px;
   transition: all 0.5s ease;
 }
@@ -188,7 +188,14 @@
   display: none;
 }
 
+.menu-btn-single-video {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
+  .menu-btn-single-video {
+    display: flex;
+  }
   .navbar {
     padding: 1rem;
   }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import "./Navbar.css";
@@ -19,6 +19,7 @@ export const Navbar = () => {
   const { dispatch } = useVideoContext();
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const { videoId } = useParams();
 
   const toggleSidebar = () => setShowSidebar(!showSidebar);
   const toggleSearchModal = () => {
@@ -38,6 +39,18 @@ export const Navbar = () => {
     <>
       <nav className="navbar nav-ecommerce">
         <div className="navbar-section">
+          {pathname === `/watch/${videoId}` ? (
+            <button
+              className="nav-menu-btn menu-btn-single-video"
+              onClick={toggleSidebar}
+            >
+              {showSidebar ? (
+                <span className="material-icons">close</span>
+              ) : (
+                <span className="material-icons">menu</span>
+              )}
+            </button>
+          ) : null}
           <button
             className="nav-menu-btn hide-on-desktop"
             onClick={toggleSidebar}
