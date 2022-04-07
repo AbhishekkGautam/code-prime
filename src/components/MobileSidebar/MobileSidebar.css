@@ -68,6 +68,7 @@
 }
 
 .login-sidebar-btn {
+  display: block;
   margin-top: 4rem;
   width: 100%;
   background-color: var(--primary-color);
@@ -91,7 +92,10 @@
 }
 
 @media screen and (min-width: 768px) {
-  .sidebar-bg {
+  /* .sidebar-bg {
+    display: none;
+  } */
+  .login-sidebar-btn {
     display: none;
   }
 }
