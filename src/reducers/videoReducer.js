@@ -14,6 +14,7 @@ import {
   ADD_VIDEO_TO_WATCH_LATER,
   DELETE_VIDEO_FROM_WATCH_LATER,
   FILTER_BY_SEARCH,
+  GET_NOTE,
   ADD_NOTE,
   DELETE_NOTE,
 } from "./actions";
@@ -50,19 +51,17 @@ export const videoReducer = (state, { type, payload }) => {
       return { ...state, watchLater: payload };
     case DELETE_VIDEO_FROM_WATCH_LATER:
       return { ...state, watchLater: payload };
+    case GET_NOTE:
+      return { ...state, notes: payload };
     case ADD_NOTE:
       return {
         ...state,
-        videos: state.videos.map(video =>
-          video._id === payload._id ? payload : video
-        ),
+        notes: payload,
       };
     case DELETE_NOTE:
       return {
         ...state,
-        videos: state.videos.map(video =>
-          video._id === payload._id ? payload : video
-        ),
+        notes: payload,
       };
     default:
       return state;
