@@ -11,6 +11,8 @@ export const TrendingList = () => {
 
   const trendingVideos = getTrendingVideos(videos);
 
+  console.log(error);
+
   return (
     <div className="trending-videos-container">
       {loading ? (

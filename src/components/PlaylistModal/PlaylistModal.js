@@ -105,6 +105,7 @@ export const PlaylistModal = ({ show, close, video, videoId }) => {
                 <div className="btn-container">
                   <button
                     className="form-btn"
+                    disabled={!title.trim()}
                     onClick={() => {
                       createPlaylistService(title, token, dispatch);
                       setTitle("");

@@ -19,7 +19,11 @@ export const LikedVideos = () => {
             {loading ? (
               <div className="loader-container">Loading...</div>
             ) : error ? (
-              <p>{error.status}</p>
+              error.status === 500 && (
+                <div className="user-message-container">
+                  <p>Unable to load data</p>
+                </div>
+              )
             ) : likedVideos?.length === 0 ? (
               <div className="user-message-container">
                 <p>No videos added yet.</p>

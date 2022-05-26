@@ -16,6 +16,10 @@
   font-size: 14px;
 }
 
+.user-feedback {
+  color: var(--gray-600);
+}
+
 .video-notes-list {
   margin-top: 10px;
   display: flex;
